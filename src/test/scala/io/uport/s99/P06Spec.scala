@@ -33,4 +33,6 @@ class P06Spec extends ProblemSpec {
   }
 
   tests("IsPalindromeBuiltin", P06.isPalindromeBuiltin)
+  tests("IsPalindromeTailRecursive", P06.isPalindromeTailRecursive)
+  tests("IsPalindromeFunctional", P06.isPalindromeFunctional)
 }

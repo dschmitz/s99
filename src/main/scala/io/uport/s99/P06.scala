@@ -28,6 +28,6 @@ object P06 {
 
   def isPalindromeTailRecursive(list: List[Int]): Boolean = list == P05.reverseBuiltin(list)
 
-  def isPalindromeTailFunctional(list: List[Int]): Boolean = list == P05.reverseFunctional(list)
+  def isPalindromeFunctional(list: List[Int]): Boolean = list == P05.reverseFunctional(list)
 
 }
