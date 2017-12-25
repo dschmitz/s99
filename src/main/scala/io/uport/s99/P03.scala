@@ -28,14 +28,14 @@ object P03 {
   def nthBuiltin(nth: Int, list: List[Int]): Option[Int] = list.lift(nth)
 
   // tail recursive
-  def nthRecursive(nth: Int, listA: List[Int]): Option[Int] = {
+  def nthTailRecursive(nth: Int, listA: List[Int]): Option[Int] = {
 
-    def nthRec(n: Int, listB: List[Int]): Option[Int] = (n, listB) match {
+    def nthRecursive(n: Int, listB: List[Int]): Option[Int] = (n, listB) match {
       case (0, h :: _)    => Some(h)
       case (_, Nil)       => None
-      case (_, _ :: tail) => nthRec(n - 1, tail)
+      case (_, _ :: tail) => nthRecursive(n - 1, tail)
     }
 
-    nthRec(nth, listA)
+    nthRecursive(nth, listA)
   }
 }

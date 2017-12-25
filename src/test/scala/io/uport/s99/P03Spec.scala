@@ -39,6 +39,6 @@ class P03Spec extends ProblemSpec {
   }
 
   tests("nthBuiltin", P03.nthBuiltin)
-  tests("nthRecursive", P03.nthRecursive)
+  tests("nthTailRecursive", P03.nthTailRecursive)
 
 }

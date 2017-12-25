@@ -32,8 +32,8 @@ class P05Spec extends ProblemSpec {
     }
   }
 
-  tests("ReverseBultin", P05.reverseBuiltin)
-  tests("ReverseRecursive", P05.reverseTailRecursive)
-  tests("ReverseFunctinal", P05.reverseFunctional)
+  tests("ReverseBuiltin", P05.reverseBuiltin)
+  tests("ReverseTailRecursive", P05.reverseTailRecursive)
+  tests("ReverseFunctional", P05.reverseFunctional)
 
 }

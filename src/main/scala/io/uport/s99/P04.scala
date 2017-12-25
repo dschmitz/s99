@@ -28,13 +28,13 @@ object P04 {
   def lengthBuiltin(list: List[Int]): Int = list.length
 
   // tail recursive
-  def lengthRecursive(listA: List[Int]): Int = {
+  def lengthTailRecursive(listA: List[Int]): Int = {
 
-    def lengthRec(acc: Int, listB: List[Int]): Int = listB match {
+    def lengthRecursive(acc: Int, listB: List[Int]): Int = listB match {
       case Nil       => acc
-      case _ :: tail => lengthRec(acc + 1, tail)
+      case _ :: tail => lengthRecursive(acc + 1, tail)
     }
-    lengthRec(0, listA)
+    lengthRecursive(0, listA)
   }
 
   // pure functional

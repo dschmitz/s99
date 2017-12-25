@@ -28,13 +28,13 @@ object P05 {
 
   def reverseTailRecursive(listA: List[Int]): List[Int] = {
 
-    def reverseRec(reverseList: List[Int], listB: List[Int]): List[Int] =
+    def reverseRecursive(reverseList: List[Int], listB: List[Int]): List[Int] =
       listB match {
         case Nil       => reverseList
-        case h :: tail => reverseRec(h :: reverseList, tail)
+        case h :: tail => reverseRecursive(h :: reverseList, tail)
       }
 
-    reverseRec(List(), listA)
+    reverseRecursive(List(), listA)
   }
 
   def reverseFunctional(list: List[Int]): List[Int] =
