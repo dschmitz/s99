@@ -33,5 +33,7 @@ class P04Spec extends ProblemSpec {
   }
 
   tests("lengthBuiltin", P04.lengthBuiltin)
+  tests("lengthRecursive", P04.lengthRecursive)
+  tests("lengthFunctional", P04.lengthFunctional)
 
 }

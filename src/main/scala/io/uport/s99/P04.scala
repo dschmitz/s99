@@ -24,6 +24,23 @@ res0: Int = 6
  */
 object P04 {
 
+  // builtin
   def lengthBuiltin(list: List[Int]): Int = list.length
+
+  // tail recursive
+  def lengthRecursive(listA: List[Int]): Int = {
+
+    def lengthRec(acc: Int, listB: List[Int]): Int = listB match {
+      case Nil       => acc
+      case _ :: tail => lengthRec(acc + 1, tail)
+    }
+    lengthRec(0, listA)
+  }
+
+  // pure functional
+  def lengthFunctional(list: List[Int]): Int =
+    list.fold(0) { (acc, _) =>
+      acc + 1
+    }
 
 }

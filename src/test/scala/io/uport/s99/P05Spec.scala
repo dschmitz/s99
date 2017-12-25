@@ -16,29 +16,24 @@
 
 package io.uport.s99
 
-class P03Spec extends ProblemSpec {
+class P05Spec extends ProblemSpec {
 
-  def tests(testName: String, ls: (Int, List[Int]) => Option[Int]): Unit = {
-    val testList = List(1, 1, 2, 3, 5, 8)
-
-    testName should "return none for element smaller out of list" in {
-      ls(-1, testList) should equal(None)
+  def tests(testName: String, ls: List[Int] => List[Int]): Unit = {
+    testName should "return same list for single element's list" in {
+      ls(List(3)) should equal(List(3))
     }
 
-    it should "return none for element bigger out of list" in {
-      ls(6, testList) should equal(None)
+    it should "return empty list for empty list" in {
+      ls(List()) should be(List())
     }
 
-    it should "return none for empty list" in {
-      ls(1, List()) should be(None)
-    }
-
-    it should "return nth element of list" in {
-      ls(2, testList) should be(Some(2))
+    it should "return reverse list of list" in {
+      ls(List(1, 1, 2, 3, 5, 8)) should be(List(8, 5, 3, 2, 1, 1))
     }
   }
 
-  tests("nthBuiltin", P03.nthBuiltin)
-  tests("nthRecursive", P03.nthRecursive)
+  tests("ReverseBultin", P05.reverseBuiltin)
+  tests("ReverseRecursive", P05.reverseTailRecursive)
+  tests("ReverseFunctinal", P05.reverseFunctional)
 
 }

@@ -17,25 +17,28 @@
 package io.uport.s99
 
 /*
-P03 (*) Find the Kth element of a list.
-By convention, the first element in the list is element 0.
+P05 (*) Reverse a list.
 Example:
-scala> nth(2, List(1, 1, 2, 3, 5, 8))
-res0: Int = 2
+scala> reverse(List(1, 1, 2, 3, 5, 8))
+res0: List[Int] = List(8, 5, 3, 2, 1, 1)
  */
-object P03 {
+object P05 {
 
-  def nthBuiltin(nth: Int, list: List[Int]): Option[Int] = list.lift(nth)
+  def reverseBuiltin(list: List[Int]): List[Int] = list.reverse
 
-  // tail recursive
-  def nthRecursive(nth: Int, listA: List[Int]): Option[Int] = {
+  def reverseTailRecursive(listA: List[Int]): List[Int] = {
 
-    def nthRec(n: Int, listB: List[Int]): Option[Int] = (n, listB) match {
-      case (0, h :: _)    => Some(h)
-      case (_, Nil)       => None
-      case (_, _ :: tail) => nthRec(n - 1, tail)
-    }
+    def reverseRec(reverseList: List[Int], listB: List[Int]): List[Int] =
+      listB match {
+        case Nil       => reverseList
+        case h :: tail => reverseRec(h :: reverseList, tail)
+      }
 
-    nthRec(nth, listA)
+    reverseRec(List(), listA)
   }
+
+  def reverseFunctional(list: List[Int]): List[Int] =
+    list.foldLeft(List[Int]()) { (ls, e) =>
+      e :: ls
+    }
 }
