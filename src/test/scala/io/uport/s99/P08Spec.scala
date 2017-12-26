@@ -16,17 +16,22 @@
 
 package io.uport.s99
 
-/*
-P08 (**) Eliminate consecutive duplicates of list elements.
-If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
-Example:
-scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
- */
-object P08 {
+class P08Spec extends ProblemSpec {
 
-  def compressRecursive[T](list: List[T]): List[T] = list match {
-    case e1 :: e2 :: tail if (e1 == e2) => compressRecursive(e1 :: tail)
-    case head :: tail                   => head :: compressRecursive(tail)
-    case Nil                            => Nil
+  def tests(testName: String, ls: List[Any] => List[Any]): Unit = {
+    testName should "return list for single element's list" in {
+      ls(List(3)) should equal(List(3))
+    }
+
+    it should "return list for empty list" in {
+      ls(List()) should be(List())
+    }
+
+    it should "return a compressed list" in {
+      ls(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) should be(List('a, 'b, 'c, 'a, 'd, 'e))
+    }
   }
+
+  tests("CompressRecursive", P08.compressRecursive)
+
 }

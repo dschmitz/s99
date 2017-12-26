@@ -32,6 +32,7 @@ class P07Spec extends ProblemSpec {
     }
   }
 
-  //tests("FlattenBuiltin", P07.flattenBuiltin)
+  tests("FlattenBuiltin", P07.flattenBuiltin)
+  tests("FlattenRecursive", P07.flattenRecursive)
 
 }

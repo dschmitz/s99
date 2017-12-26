@@ -24,5 +24,18 @@ res0: List[Any] = List(1, 1, 2, 3, 5, 8)
  */
 object P07 {
 
-  def flattenBuiltin(list: List[Any]): List[Any] = ???
+  @SuppressWarnings(Array("org.wartremover.warts.Any"))
+  def flattenBuiltin(list: List[Any]): List[Any] = list.flatMap {
+    case l: List[Any] => flattenBuiltin(l)
+    case e            => List(e)
+  }
+
+  @SuppressWarnings(
+    Array("org.wartremover.warts.Any")
+  )
+  def flattenRecursive(list: List[Any]): List[Any] = list match {
+    case (head: List[Any]) :: tail => flattenRecursive(head ++ tail)
+    case head :: tail              => head :: flattenRecursive(tail)
+    case Nil                       => Nil
+  }
 }
