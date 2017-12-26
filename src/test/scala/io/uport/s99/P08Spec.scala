@@ -33,5 +33,6 @@ class P08Spec extends ProblemSpec {
   }
 
   tests("CompressRecursive", P08.compressRecursive)
+  tests("CompressFunctional", P08.compressFunctional)
 
 }

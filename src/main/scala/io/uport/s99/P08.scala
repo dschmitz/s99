@@ -29,4 +29,10 @@ object P08 {
     case head :: tail                   => head :: compressRecursive(tail)
     case Nil                            => Nil
   }
+
+  def compressFunctional[T](list: List[T]): List[T] =
+    list.foldRight(List[T]()) {
+      case (e, ls) if (ls.headOption == Option(e)) => ls
+      case (e, ls)                                 => e :: ls
+    }
 }
