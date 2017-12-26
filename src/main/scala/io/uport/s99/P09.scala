@@ -16,22 +16,11 @@
 
 package io.uport.s99
 
-class P07Spec extends ProblemSpec {
-
-  def tests(testName: String, ls: List[Any] => List[Any]): Unit = {
-    testName should "return list for single element's list" in {
-      ls(List(3)) should equal(List(3))
-    }
-
-    it should "return list for empty list" in {
-      ls(List()) should be(List())
-    }
-
-    it should "return a flat list" in {
-      ls(List(List(1, 1), 2, List(3, List(5, 8)))) should be(List(1, 1, 2, 3, 5, 8))
-    }
-  }
-
-  //tests("FlattenBuiltin", P07.flattenBuiltin)
-
-}
+/*
+P09 (**) Pack consecutive duplicates of list elements into sublists.
+If a list contains repeated elements they should be placed in separate sublists.
+Example:
+scala> pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+ */
+object P09 {}

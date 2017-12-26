@@ -16,22 +16,12 @@
 
 package io.uport.s99
 
-class P07Spec extends ProblemSpec {
-
-  def tests(testName: String, ls: List[Any] => List[Any]): Unit = {
-    testName should "return list for single element's list" in {
-      ls(List(3)) should equal(List(3))
-    }
-
-    it should "return list for empty list" in {
-      ls(List()) should be(List())
-    }
-
-    it should "return a flat list" in {
-      ls(List(List(1, 1), 2, List(3, List(5, 8)))) should be(List(1, 1, 2, 3, 5, 8))
-    }
-  }
-
-  //tests("FlattenBuiltin", P07.flattenBuiltin)
-
-}
+/*
+P10 (*) Run-length encoding of a list.
+Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as
+tuples (N, E) where N is the number of duplicates of the element E.
+Example:
+scala> encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+ */
+object P10 {}

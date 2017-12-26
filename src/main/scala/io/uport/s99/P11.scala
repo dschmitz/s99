@@ -16,22 +16,12 @@
 
 package io.uport.s99
 
-class P07Spec extends ProblemSpec {
-
-  def tests(testName: String, ls: List[Any] => List[Any]): Unit = {
-    testName should "return list for single element's list" in {
-      ls(List(3)) should equal(List(3))
-    }
-
-    it should "return list for empty list" in {
-      ls(List()) should be(List())
-    }
-
-    it should "return a flat list" in {
-      ls(List(List(1, 1), 2, List(3, List(5, 8)))) should be(List(1, 1, 2, 3, 5, 8))
-    }
-  }
-
-  //tests("FlattenBuiltin", P07.flattenBuiltin)
-
-}
+/*
+P11 (*) Modified run-length encoding.
+Modify the result of problem P10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are
+transferred as (N, E) terms.
+Example:
+scala> encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+res0: List[Any] = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+ */
+object P11 {}
