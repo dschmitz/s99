@@ -86,6 +86,7 @@ lazy val headerSettings = Seq(
 )
 
 lazy val scoverageSettings = Seq(
+  coverageEnabled       := true,
   coverageMinimum       := 60,
   coverageFailOnMinimum := false
 )
