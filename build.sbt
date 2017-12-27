@@ -57,7 +57,12 @@ lazy val commonSettings =
       "-language:_",
       "-target:jvm-1.8",
       "-encoding",
-      "UTF-8"
+      "UTF-8",
+      "-feature",
+      "-Ywarn-dead-code",
+      "-Ywarn-numeric-widen",
+      "-Ywarn-value-discard",
+      "-Ywarn-unused"
     ),
     unmanagedSourceDirectories.in(Compile) := Seq(scalaSource.in(Compile).value),
     unmanagedSourceDirectories.in(Test)    := Seq(scalaSource.in(Test).value)

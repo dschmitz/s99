@@ -16,8 +16,7 @@
 
 package io.uport.s99
 
-import org.scalatest.FlatSpec
-import org.scalatest.Matchers
+import org.scalatest.{ AsyncFlatSpec, Matchers }
 
 // This is by purpose abstract class for speedier compiles
-abstract class ProblemSpec extends FlatSpec with Matchers
+abstract class ProblemSpec extends AsyncFlatSpec with Matchers
