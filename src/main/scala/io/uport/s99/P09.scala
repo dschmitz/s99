@@ -23,4 +23,11 @@ Example:
 scala> pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
 res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
  */
-object P09 {}
+object P09 {
+
+  def packFunctional[T](list: List[T]): List[T] =
+    list.foldRight(List[T]()) {
+      case (e, ls) if (ls.headOption == Option(e)) => e :: ls
+      case (e, _)                                  => List[T](e)
+    }
+}
