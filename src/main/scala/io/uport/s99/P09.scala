@@ -25,6 +25,12 @@ res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), Li
  */
 object P09 {
 
+//  def packRecursive[T](list: List[T]): List[T] = list match {
+//    case e1 :: e2 :: tail if (e1 == e2) => packRecursive(List(e1, e2) ::: tail)
+//    case head :: tail                   => head :: packRecursive(tail)
+//    case Nil                            => Nil
+//  }
+
   def packFunctional[T](list: List[T]): List[T] =
     list.foldRight(List[T]()) {
       case (e, ls) if (ls.headOption == Option(e)) => e :: ls
