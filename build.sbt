@@ -77,7 +77,7 @@ lazy val scalafmtSettings =
   Seq(
     scalafmtOnCompile         := true,
     scalafmtOnCompile.in(Sbt) := true,
-    scalafmtVersion           := "1.3.0"
+    scalafmtVersion           := "1.4.0"
   )
 
 import de.heikoseeberger.sbtheader.License._
